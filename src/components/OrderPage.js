@@ -12,29 +12,14 @@ import items from './OrderTableComponent'
 import CustomerInfo from './OrderTableForm'
 import Footer from './Footer'
 
-export default function OrderPage(){
-  <div className='OrderPage'>
+export default function OrderPage(items,item,CustomerInfo){
+  
   <OrderPageLayout> 
   <Nav/>
-  <MenuComponent items={[
-{
-  name:'Some Item',price:9.99,imagepath:'//via.placeholder.com/300x200'
-},
-{
-  name:'Some Item',price:4.99,imagepath:'//via.placeholder.com/300x200'
-},
-{
-  name:'Some Item',price:8.99,imagepath:'//via.placeholder.com/300x200'
-},
-{
-  name:'Some Item',price:12.99,imagepath:'//via.placeholder.com/300x200'
-}
-  ]}/>
-  <OrderTableComponent item={{
-  name:'Some Item',price:12.99,imagepath:'//via.placeholder.com/300x200'
-}} />
-  <OrderTableForm CustomerInfo={{name:'Jason',number:'248 719 1725',address:'922 Folsom'}} />
+  <MenuComponent items={items}/>
+  <OrderTableComponent item={item} />
+  <OrderTableForm CustomerInfo={CustomerInfo} />
   <Footer/>
   </OrderPageLayout>
-  </div>
+ 
 )}

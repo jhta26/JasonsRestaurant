@@ -12,6 +12,7 @@ import OrderTableForm from './components/OrderTableForm'
 import OrderTableComponent from './components/OrderTableComponent'
 import items from './components/OrderTableComponent'
 import CustomerInfo from './components/OrderTableForm'
+import OrderPage from './components/OrderPage'
 
 
 
@@ -19,9 +20,8 @@ import CustomerInfo from './components/OrderTableForm'
 
 
 
-ReactDOM.render(  <OrderPageLayout> 
-  <Nav/>
-  <MenuComponent items={[
+ReactDOM.render(  <OrderPage 
+items={[
 {
   name:'Some Item',price:9.99,imagepath:'//via.placeholder.com/300x200'
 },
@@ -34,13 +34,15 @@ ReactDOM.render(  <OrderPageLayout>
 {
   name:'Some Item',price:12.99,imagepath:'//via.placeholder.com/300x200'
 }
-  ]}/>
-  <OrderTableComponent item={{
+  ]}
+item={{
   name:'Some Item',price:12.99,imagepath:'//via.placeholder.com/300x200'
-}} />
-  <OrderTableForm CustomerInfo={{name:'Jason',number:'248 719 1725',address:'922 Folsom'}} />
-  <Footer/>
-  </OrderPageLayout>,
+}}
+CustomerInfo={{name:'Jason',number:'248 719 1725',address:'922 Folsom'}}
+  />,
+}
+}
+}
 document.getElementById('root')
   )
 
