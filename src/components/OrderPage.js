@@ -12,13 +12,13 @@ import items from './OrderTableComponent'
 import CustomerInfo from './OrderTableForm'
 import Footer from './Footer'
 
-export default function OrderPage(items,item,CustomerInfo){
+export default function OrderPage(menuItems,orderItems,customerInfo){
   
   <OrderPageLayout> 
   <Nav/>
-  <MenuComponent items={items}/>
-  <OrderTableComponent item={item} />
-  <OrderTableForm CustomerInfo={CustomerInfo} />
+  <MenuComponent menuItems={menuItems}/>
+  <OrderTableComponent orderItems={orderItems} />
+  <OrderTableForm customerInfo={customerInfo} />
   <Footer/>
   </OrderPageLayout>
  

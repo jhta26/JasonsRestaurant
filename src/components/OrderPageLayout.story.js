@@ -12,10 +12,7 @@ import items from './OrderTableComponent'
 import CustomerInfo from './OrderTableForm'
 import Footer from './Footer'
 
-storiesOf('OrderPageLayout', module).add('Happy Path', () =>
-  <OrderPageLayout> 
-  <Nav/>
-  <MenuComponent items={[
+var menuItems=[
 {
   name:'Some Item',price:9.99,imagepath:'//via.placeholder.com/300x200'
 },
@@ -28,11 +25,20 @@ storiesOf('OrderPageLayout', module).add('Happy Path', () =>
 {
   name:'Some Item',price:12.99,imagepath:'//via.placeholder.com/300x200'
 }
-  ]}/>
-  <OrderTableComponent item={{
+  ]
+var orderItems = {
   name:'Some Item',price:12.99,imagepath:'//via.placeholder.com/300x200'
-}} />
-  <OrderTableForm CustomerInfo={{name:'Jason',number:'248 719 1725',address:'922 Folsom'}} />
+}
+var customerInfo ={
+  name:'Jason',number:'248 719 1725',address:'922 Folsom'
+}
+
+storiesOf('OrderPageLayout', module).add('Happy Path', () =>
+  <OrderPageLayout> 
+  <Nav/>
+  <MenuComponent items={menuItems}/>
+  <OrderTableComponent item={orderItems} />
+  <OrderTableForm CustomerInfo={customerInfo} />
   <Footer/>
   </OrderPageLayout>
 )
