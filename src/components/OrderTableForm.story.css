@@ -1,0 +1,13 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons" ;
+
+.OrderTableForm{
+	display:flex;
+	flex-direction:column;
+	
+	align-items: space-between;
+}
+.Input{
+		display:flex;
+	flex-direction:column;
+	align-items: space-between;
+}
