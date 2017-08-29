@@ -1,11 +1,14 @@
 import React from 'react'
 import MenuItemComponent from './MenuItemComponent'
 
-function MenuComponent({items}){
+
+var itemData=[]
+
+function MenuComponent({items, onAddItem}){
 	return (
 		<div className='MenuComponent'>
-	{items.map((item,index)=><MenuItemComponent key={index} item={item} />)}
+	{items.map(item=><MenuItemComponent key={item.id} item={item} onAddItem={onAddItem} />)}
 	</div>
 	)
 }
-export default (MenuComponent)
+export default (itemData,MenuComponent)

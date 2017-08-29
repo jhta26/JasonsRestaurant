@@ -1,7 +1,13 @@
 import React from 'react'
 
-export default function MenuItemComponent({item={name:'N/A',imagepath:'N/A',price:''}}){
-	
+var itemData=[]
+
+export default function MenuItemComponent({item={name:'N/A',imagepath:'N/A',price:''},onAddItem}){
+	function handleClick(event){
+		event.preventDefault()
+		onAddItem(item)
+		
+	}
 
 	return(
 <div className="col s12 m12 l6">
@@ -15,7 +21,7 @@ export default function MenuItemComponent({item={name:'N/A',imagepath:'N/A',pric
 			<p>{item.price?`${item.price.toFixed(2)}`:'N/A'}</p>
 		</div>
 		<div className = 'card-action'>
-			<a href="#">Add Order</a>
+			<a href="#" onClick={handleClick}>Add Order</a>
 		
 	</div>
 	</div>
