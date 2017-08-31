@@ -1,48 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Nav from './components/Nav'
-import Footer from './components/Footer'
-import OrderPageLayout from './components/OrderPageLayout'
-import { storiesOf } from '@storybook/react';
 import OrderPage from './components/OrderPage'
 
 
+
 function addItem(itemId){
-  menuItems.find(item=>(item.id===itemId))
+  orderItems.push(menuItems.find(item=>item.id===itemId))
   render()
 }
 
 let menuItems=[
 {
-  name:'Some Item',price:9.99,imagepath:'//via.placeholder.com/300x200',id:1
+  name:'Burger',price:9.99,imagepath:'//via.placeholder.com/300x200',id:1
 },
 {
-  name:'Some Item',price:4.99,imagepath:'//via.placeholder.com/300x200',id:2
+  name:'Pie',price:4.99,imagepath:'//via.placeholder.com/300x200',id:2
 },
 {
-  name:'Some Item',price:8.99,imagepath:'//via.placeholder.com/300x200',id:3
+  name:'Pizza',price:8.99,imagepath:'//via.placeholder.com/300x200',id:3
 },
 {
-  name:'Some Item',price:12.99,imagepath:'//via.placeholder.com/300x200',id:4
+  name:'Pig',price:12.99,imagepath:'//via.placeholder.com/300x200',id:4
 }
   ]
-var orderItems = [
-{
-  name:'Some Item',price:9.99,imagepath:'//via.placeholder.com/300x200',id:1
-},
-{
-  name:'Some Item',price:4.99,imagepath:'//via.placeholder.com/300x200',id:2
-},
-{
-  name:'Some Item',price:8.99,imagepath:'//via.placeholder.com/300x200',id:3
-},
-{
-  name:'Some Item',price:12.99,imagepath:'//via.placeholder.com/300x200',id:4
-}
-  ]
+var orderItems = []
 
-var customerInfo = {name:'Jason',number:'248 719 1725',address:'922 Folsom'}
+var customerInfo = null
+
+function onSubmitOrderForm({name,number,address}){
+customerInfo={name,number,address}
+render()
+}
+
+function onCloseOrderSuccessMessage(){
+  customerInfo=null
+  render()
+}
 
 function render(){
 ReactDOM.render(  
@@ -50,7 +44,9 @@ ReactDOM.render(
 menuItems={menuItems}
 orderItems={orderItems}
 customerInfo={customerInfo}
-onAddItem={addItem}/>,
+onAddItem={addItem}
+onSubmitOrderForm={onSubmitOrderForm}
+onCloseOrderSuccessMessage={onCloseOrderSuccessMessage}/>,
 
 document.getElementById('root')
   )

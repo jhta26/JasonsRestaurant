@@ -6,7 +6,7 @@ import OrderPageLayout from './OrderPageLayout'
 import './OrderPageLayout.story.css'
 import Nav from './Nav'
 import MenuComponent from './MenuComponent'
-import OrderTableForm from './OrderTableForm'
+import OrderFormComponent from './OrderFormComponent'
 import OrderTableComponent from './OrderTableComponent'
 import items from './OrderTableComponent'
 import CustomerInfo from './OrderTableForm'
@@ -51,7 +51,7 @@ storiesOf('OrderPageLayout', module).add('Happy Path', () =>
   <Nav/>
   <MenuComponent items={menuItems}  />
   <OrderTableComponent items={orderItems} />
-  <OrderTableForm CustomerInfo={customerInfo} />
+  <OrderFormComponent CustomerInfo={customerInfo} />
   <Footer/>
   </OrderPageLayout>
 )

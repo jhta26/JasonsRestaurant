@@ -1,9 +1,10 @@
 import React from 'react'
 import itemData from './MenuComponent'
 export default function OrderTableComponent({items}){
-	let subtotal = items.map(a=>a=a.price).reduce((a,b)=>a+b)
-   let tax = (subtotal*.10).toFixed(2)
-   let total = (parseFloat(subtotal)+parseFloat(tax)).toFixed(2)
+	var subtotal = items.length>0?items.map(a=>a=a.price).reduce((a,b)=>a+b).toFixed(2):0
+   var tax = (subtotal*.10).toFixed(2)
+   var total = (parseFloat(subtotal)+parseFloat(tax)).toFixed(2)
+   
 	return(
 		<table className="striped grey-text text-darken-4 OrderTableComponent">
                   <thead>
@@ -14,7 +15,7 @@ export default function OrderTableComponent({items}){
                      </tr>
                   </thead>
                   <tbody>
-                  {items.map(item=><tr key={item.id.toString()}>
+                  {items.map((item,index)=><tr key={index}>
                   <td></td>
                   <td className="right-align">{item.name}</td>
                   <td className="right-align">{item.price}</td>

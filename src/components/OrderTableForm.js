@@ -1,7 +1,17 @@
 import React from 'react'
 
-function OrderTableForm({CustomerInfo}){
+function OrderTableForm({CustomerInfo, onSubmit}){
 	
+   // function _handleSubmit(event){
+   //    event.preventDefault()
+   //    $form = event.target
+   //    name= $form.value.name
+   //    number = $form.value.number
+   //    address = $form.value.number
+   // }
+
+
+
 	return(
 		
                <form className = "OrderTableForm">
