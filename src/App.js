@@ -1,19 +1,86 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ReactDOM from 'react-dom'
+import OrderPage from './components/OrderPage'
+import getMenuItems from './request/getMenuItems'
+export default class App extends Component{
 
+state={
+	menuItems: null,
+	orderItems:[],
+	customerInfo:null
+}
+componentDidMount(){
+	getMenuItems()
+	.then(menuItems=>{ 
+		this.setState({
+		menuItems
+		})
+	}).catch(error=>console.log(error))
+		
+		}	
 
-// function Welcome(props){
-//   return (<h1>Hello, {props.name} </h1>)
+render() {
+    return (
+      <OrderPage
+        menuItems={this.state.menuItems}
+        orderItems={this.state.orderItems}
+        customerInfo={this.state.customerInfo}
+        onAddItem={this._addItem}
+        onSubmitOrderForm={this._submitOrderForm}
+        onCloseOrderSuccessMessage={this._onCloseOrderSuccessMessage}
+      />
+    );
+  }
+// function addItem(itemId){
+//   orderItems.push(menuItems.find(item=>item.id===itemId))
+//   render()
 // }
 
-const Welcome = ({ name }) => (
-  <h1>Hello, {name} </h1>
+
+_addItem = itemId => {
+  this.setState(prevState=>{
+  	return{
+  		orderItems:[
+  		...prevState.orderItems,
+  		prevState.menuItems.find(item=>item.id===itemId)
+  		]
+  	}
+
+  })
+
+}
+// function onSubmitOrderForm({name,number,address}){
+// customerInfo={name,number,address}
+// render()
+// }
+
+_submitOrderForm=({name,number,address})=>{
+this.setState(
+	{customerInfo:{name,number,address}}
 )
 
+}
+
+// function onCloseOrderSuccessMessage(){
+//   customerInfo=null
+//   render()
+// }
+_onCloseOrderSuccessMessage=()=>{
+  this.setState(
+  	{
+  	customerInfo: null,
+  	orderItems:[]
+	}
+)
+}
+
+	
+
+
+}
 
 
 
 
-export default Welcome
+
 

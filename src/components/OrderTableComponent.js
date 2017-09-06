@@ -1,6 +1,7 @@
 import React from 'react'
 import itemData from './MenuComponent'
 export default function OrderTableComponent({items}){
+   
 	var subtotal = items.length>0?items.map(a=>a=a.price).reduce((a,b)=>a+b).toFixed(2):0
    var tax = (subtotal*.10).toFixed(2)
    var total = (parseFloat(subtotal)+parseFloat(tax)).toFixed(2)

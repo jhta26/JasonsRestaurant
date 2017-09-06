@@ -3,7 +3,7 @@ import React from 'react';
 var itemData = [];
 
 export default function MenuItemComponent({
-  item = { name: 'N/A', imagepath: 'N/A', price: '' },
+  item = { name: 'N/A', imagePath: '//via.placeholder.com/300x200', price: '' },
   onAddItem
 }) {
   function handleClick(event) {
@@ -15,7 +15,7 @@ export default function MenuItemComponent({
     <div className="col s12 m12 l6">
       <div className="card medium cards MenuItemComponent">
         <div className="card-image">
-          <img src={item.imagepath ? item.imagepath : 'N/A'} />
+          <img src={item.imagePath ? item.imagePath : 'N/A'} />
         </div>
         <div className="card-content">
           <h5 className="card-title">
