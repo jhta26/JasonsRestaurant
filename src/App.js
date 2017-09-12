@@ -49,10 +49,7 @@ _addItem = itemId => {
   })
 
 }
-// function onSubmitOrderForm({name,number,address}){
-// customerInfo={name,number,address}
-// render()
-// }
+
 
 _submitOrderForm=({name,number,address})=>{
 this.setState(
