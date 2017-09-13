@@ -2,39 +2,13 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { assert } from 'chai';
 import MenuItemComponent from '../components/MenuItemComponent'
+import renderer from 'react-test-renderer'
 
-const onAddItem = (itemId) => {
-  console.log(`This is the itemID!!! ${itemId}`);
-}
+
 
 const item = { name: 'Some Item A', price: 9.99, imagePath: '//via.placeholder.com/300x200' }
+const onAddItem = jest.fn()
 
-const menuItems = [
-		{
-			"name": "Smoked Swine",
-			"price": 8.99,
-			"imagePath": "//via.placeholder.com/300x200",
-			"id": 1
-		},
-		{
-			"name": "Royale with Cheese",
-			"price": 11.99,
-			"imagePath": "//via.placeholder.com/300x200",
-			"id": 2
-		},
-		{
-			"name": "Arugula Pie",
-			"price": 14.99,
-			"imagePath": "//via.placeholder.com/300x200",
-			"id": 3
-		},
-		{
-			"name": "Ice Cream Biscuit",
-			"price": 7.99,
-			"imagePath": "//via.placeholder.com/300x200",
-			"id": 4
-		}
-	];
 
 describe('Testing MenuItemComponent',()=>{
 	
@@ -48,13 +22,13 @@ it('should render the menu item name', ()=>{
 it('should render the menu price', ()=>{
 	const shallowWrapper= shallow(<MenuItemComponent item={item} onAddItem={onAddItem}/>)
 	let itemPriceWrapper = shallowWrapper.find('.card-content').children('p')
-	assert.equal(price.length,1)
+	expect(itemPriceWrapper.text()).toBe('9.99')
 	
 })
 it('should test add Item',()=>{
+
 const shallowWrapper= shallow(<MenuItemComponent item={item} onAddItem={onAddItem}/>)
-const onAddItem = jest.fn()
-mount(<MenuItemComponent onAddItem={onAddItem} item={item}/>).find('.menuChoice').simulate('click')
+mount(<MenuItemComponent item={item} onAddItem={onAddItem}/>).find('.link').simulate('click')
 expect(onAddItem).toHaveBeenCalled()
 
 
@@ -62,7 +36,7 @@ expect(onAddItem).toHaveBeenCalled()
 
 it('renders correctly',()=>{
 const shallowWrapper= shallow(<MenuItemComponent item={item} onAddItem={onAddItem}/>)
-const item = { name: 'Some Item A', price: 9.99, imagePath: '//via.placeholder.com/300x200' }
+var item = { name: 'Some Item A', price: 9.99, imagePath: '//via.placeholder.com/300x200' }
 const image = renderer.create(<img src={item.imagePath || '//via.placeholder.com/300x200'} alt="" />).toJSON()
 expect(image).toMatchSnapshot()
 

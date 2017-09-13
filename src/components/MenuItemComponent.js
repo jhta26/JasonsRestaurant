@@ -26,7 +26,7 @@ export default function MenuItemComponent({
           </p>
         </div>
         <div className="card-action">
-          <a href="#" onClick={handleClick}>
+          <a className ='link' href="#" onClick={handleClick}>
             Add Order
           </a>
         </div>
