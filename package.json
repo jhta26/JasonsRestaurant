@@ -2,34 +2,42 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "jest": {
-    "verbose": true
-  },
-  "dependencies": {
+
+ "dependencies": {
+   "materialize-css": "^0.100.1",
     "chai": "^4.1.2",
-    "materialize-css": "^0.100.1",
+    "deep-freeze": "0.0.1",
+    "enzyme": "^2.9.1",
+    "font-awesome": "^4.7.0",
+    "jest": "^21.0.1",
+    "moment": "^2.18.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
     "react-scripts": "1.0.11",
-    "enzyme": "^2.9.1",
-    "jest-cli": "^21.0.1",
-    "jest-enzyme": "^3.8.2"
+    "react-test-renderer": "^15.6.1",
+    "recompose": "^0.25.0",
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.6",
     "@storybook/addon-links": "^3.2.6",
     "@storybook/react": "^3.2.8",
     "babel-jest": "^21.0.0",
+    "babel-plugin-dynamic-import-node": "^1.1.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "chai": "^4.1.2",
     "jest": "^21.0.1",
     "react-test-renderer": "^15.6.1",
+    "redux-devtools": "^3.4.0",
     "storybook-addon-specifications": "^2.1.1"
   }
 }
