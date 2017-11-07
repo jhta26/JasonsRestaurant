@@ -12,7 +12,7 @@ export default function Nav() {
 	return(
 <nav className='blue darken-1 col l12 s12'>
 	<div className = 'nav-wrapper blue darken-1' id='nav'>
-    	<h4 className="brand logo blue darken-1 white text">Galvanize Delivers</h4>
+    	<h4 className="brand logo blue darken-1 white text">Jason's Restaurant</h4>
      	<ul className="right hide-on-med-and-down">
       		<li className="active"><a className= "blue darken-1 white-text" href="order.html">Order Delivery</a></li>
     	 </ul>
