@@ -11,7 +11,7 @@ const Footer = () => (
           <div className="container">
             <div className="row">
               <div className="col l6 s12">
-                <h5 className="white-text">Galvanize Delivers</h5>
+                <h5 className="white-text">Jason's Restaurant</h5>
                 <p className="grey-text text-lighten-4">Fine Dining, Delivered</p>
               </div>
               <div className="col l4 offset-l2 s12">
@@ -26,7 +26,7 @@ const Footer = () => (
           </div>
           <div className="footer-copyright">
             <div className="container">
-            © 2017 Galvanize Delivers
+            © 2017 Jason's Restaurant
 
             </div>
           </div>
