@@ -3,7 +3,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'impact,cursive';
 }
 #nav{
   display:flex;
@@ -13,6 +13,4 @@ body {
   padding-right:2%;
   padding-bottom: 5%;
 }
-h4{
-	font-family: 'impact'
-}
+
