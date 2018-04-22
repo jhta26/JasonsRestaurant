@@ -33,18 +33,18 @@ render(){
                <form onSubmit={this._handleSubmit}>
                   <div className="Input input-field ">
                      <i className="material-icons prefix small">account_circle</i>
-                     <input id="name" type="text"></input>
-                     <label>Name</label>
+                     <input id="name" type="text" placeholder="Name"></input>
+                     
                   </div>
                   <div className="Input input-field ">
                      <i className="material-icons prefix small">phone</i>
-                     <input id="phone" type="text"></input>
-                     <label>Phone</label>
+                     <input id="phone" type="text" placeholder="Phone"></input>
+                     
                   </div>
                   <div className="Input input-field">
                      <i className="material-icons prefix small">address</i>
-                     <input id="address" type="text"></input>
-                     <label>Address</label>
+                     <input id="address" type="text" placeholder="Address"></input>
+                     
                   </div>
 
                <div className="col s12 offset-s4">
